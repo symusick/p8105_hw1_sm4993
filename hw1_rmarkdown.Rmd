@@ -1,0 +1,27 @@
+---
+title: "P8105: Homework 1"
+author: "Sydney Musick (sm4993)"
+date: 9/29/21
+output: github_document
+---
+
+# Problem 1
+
+Loading in the tidyverse library.
+```{r}
+library(tidyverse)
+```
+
+Creating the dataframe.
+```{r}
+q1_df = tibble(
+  random_sample = rnorm(10),
+  vec_pos = random_sample > 0,
+  vec_character = c("New York", "Michigan", "Florida", "Texas", "Georgia", "California", "Washington", "Colorado", "Utah", "Nevada"), 
+  vec_factor = factor(c("rain", "sun", "snow", "snow", "snow", "rain", "sun", "sun", "sun", "snow"))
+)
+```
+
+
+
+
