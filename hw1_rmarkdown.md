@@ -71,3 +71,28 @@ factor “levels”. The character variable wasn’t able to be converted
 because there is no order or logic to the observations within that
 variable. This explains the results we get when we take the means of
 these variables.
+
+# Problem 2
+
+### Loading the `penguins` dataset into R.
+
+``` r
+data("penguins", package = "palmerpenguins")
+```
+
+The `penguins` dataset has 344 rows and 8 columns. It includes variables
+species, island, bill\_length\_mm, bill\_depth\_mm, flipper\_length\_mm,
+body\_mass\_g, sex, year. The mean flipper length of the penguins in the
+dataset is 200.9152047.
+
+### Creating a scatterplot of flipper\_length\_mm vs bill\_length\_mm, and species by color.
+
+``` r
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+```
+
+![](hw1_rmarkdown_files/figure-gfm/ggplot-1.png)<!-- -->
+
+``` r
+ggsave("scatter_plot.pdf", height = 4, width = 6)
+```

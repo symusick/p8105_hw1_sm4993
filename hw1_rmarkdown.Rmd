@@ -37,3 +37,20 @@ as.numeric(pull(q1_df, vec_character))
 as.numeric(pull(q1_df, vec_factor))
 ```
 Using this code, we were able to take the mean of `vec_factor` but not of `vec_character`. This occurs because, using `as.numeric`, we are able to convert the factor variable to integers by numbering the different factor "levels". The character variable wasn't able to be converted because there is no order or logic to the observations within that variable. This explains the results we get when we take the means of these variables. 
+
+
+# Problem 2
+
+### Loading the `penguins` dataset into R.
+```{r penguins}
+data("penguins", package = "palmerpenguins")
+```
+The `penguins` dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns. It includes variables `r names(penguins)`. The mean flipper length of the penguins in the dataset is `r mean(na.rm=TRUE, pull(penguins, flipper_length_mm))`.
+
+### Creating a scatterplot of flipper_length_mm vs bill_length_mm, and species by color.
+```{r ggplot, warning = FALSE}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+ggsave("scatter_plot.pdf", height = 4, width = 6)
+```
+
+
